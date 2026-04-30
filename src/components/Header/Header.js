@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { WiDayCloudy } from "react-icons/wi";
 import { Link } from "react-router-dom";
 import Modals from "../Formulario/Modals";
+import LoginModal from "../Formulario/LoginModal";
 
 const Header = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   function openNav() {
     document.getElementById("mySidepanel").style.width = "250px";
   }
@@ -17,13 +19,12 @@ const Header = () => {
     <>
       <div className="header">
         <div id="mySidepanel" className="sidepanel">
-          <a
-            href="javascript:void(0)"
-            className="closebtn"
-            onClick={() => closeNav()}
-          >
-            &times;
-          </a>
+        <button
+          className="closebtn"
+          onClick={() => closeNav()}
+        >
+          &times;
+        </button>
 
           <ul>
             <Link
@@ -114,9 +115,12 @@ const Header = () => {
           &#9776; &nbsp; SECCIONES &nbsp;
         </button>
 
-        <button className="btn_buscar">
+        <button
+          className="btn_buscar"
+          onClick={() => setIsSearchOpen((prev) => !prev)}
+        >
           <FiSearch className="lupa" />
-          &nbsp; BUSCAR{" "}
+          &nbsp; BUSCAR
         </button>
         <h1>
           <Link to="/" title="Ir a la página principal" className="logo">
@@ -124,8 +128,31 @@ const Header = () => {
           </Link>{" "}
         </h1>
         <Modals />
-        <button className="btn_ingresar">INGRESAR</button>
-      </div>
+        <LoginModal />
+      
+      {isSearchOpen && (
+        <div className="search-panel">
+          <form
+            className="search-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Buscar noticias, secciones..."
+            />
+            <button
+              type="button"
+              className="search-close"
+              onClick={() => setIsSearchOpen(false)}
+            >
+              X
+            </button>
+          </form>
+        </div>
+      )}
       <div className="sub_menu">
         <ul>
           <li>
@@ -142,12 +169,13 @@ const Header = () => {
             Capital Federal
           </li>
           <li>
-            <a href="#">Recibí Newsletters</a>
+            <button className="link-button">Recibí Newsletters</button>
           </li>
           <li>
-            <a href="#">Descubrí tus beneficios</a>
+            <button className="link-button">Descubrí tus beneficios</button>
           </li>
         </ul>
+      </div>
       </div>
     </>
   );

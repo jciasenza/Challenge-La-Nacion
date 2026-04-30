@@ -9,24 +9,30 @@ import Opinion from "./components/Rutas/Opinion";
 import Politica from "./components/Rutas/Politica";
 import Sociedad from "./components/Rutas/Sociedad";
 import UltimasNoticias from "./components/Rutas/UltimasNoticias";
+import Header from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="deportes" element={<Deportes />} />
-          <Route path="economia" element={<Economia />} />
-          <Route path="elmundo" element={<ElMundo />} />
-          <Route path="espectaculos" element={<Espectaculos />} />
-          <Route path="opinion" element={<Opinion />} />
-          <Route path="politica" element={<Politica />} />
-          <Route path="sociedad" element={<Sociedad />} />
-          <Route path="ultimasnoticias" element={<UltimasNoticias />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <div className="app-shell">
+        <Header />
+        <main className="app-content">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="deportes" element={<Deportes />} />
+            <Route path="economia" element={<Economia />} />
+            <Route path="elmundo" element={<ElMundo />} />
+            <Route path="espectaculos" element={<Espectaculos />} />
+            <Route path="opinion" element={<Opinion />} />
+            <Route path="politica" element={<Politica />} />
+            <Route path="sociedad" element={<Sociedad />} />
+            <Route path="ultimasnoticias" element={<UltimasNoticias />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 export default App;

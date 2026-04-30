@@ -2,7 +2,7 @@
 
 .site-footer {
   width: 100%;
-  padding: 10px 10px 0px 10px;
+  height: 15rem;
   font-size: 17px;
   color: #979696;
 }
@@ -72,10 +72,11 @@ a:active {
 .copyright-text {
   font-family: Aie;
   color: #33353d;
-  height: 50px;
+  height: 1.5rem;
   width: 100%;
   background-color: transparent;
-  padding: 10px;
+  padding: 10px 0 0 0;
+  margin: 0;
 }
 @media (max-width: 991px) {
   .site-footer [className^="col-"] {
@@ -131,4 +132,7 @@ a:active {
     margin-right: 0;
     font-weight: 600;
   }
+}
+.site-footer .container {
+text-align: center;
 }

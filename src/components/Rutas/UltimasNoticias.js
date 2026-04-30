@@ -1,17 +1,16 @@
 import React from "react";
 import "../../App.scss";
 import Box from "../Box";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import BigNews from "../BigNews/index";
 import News from "../News/index";
 
 const UltimasNoticias = () => {
   return (
-    <>
-      <Header />
-      <Box title={"Ultimas Noticias"} />
-      <div className="content_UN">
+    <div className="content_UN">
+      <Box
+        title={"Ultimas Noticias"}
+      />
+      <div className="ultimas_noticias">
         <BigNews
           category={"Andrés “Cuervo” Larroque"}
           title={
@@ -31,9 +30,7 @@ const UltimasNoticias = () => {
           }
         />
       </div>
-      <hr />
-      <Footer />
-    </>
+    </div>
   );
 };
 

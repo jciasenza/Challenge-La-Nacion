@@ -5,9 +5,7 @@ import { Row } from "./components/Row";
 import Card from "./components/Card/index";
 import BigCard from "./components/BigCard/index";
 import publi from "./components/Imagenes/publi.jpg";
-import Header from "./components/Header/Header";
 import Carrousel from "./components/Carrousel/Carrousel";
-import { Footer } from "./components/Footer/Footer";
 import Opinion from "./components/Opinion";
 
 const Articles = [
@@ -72,7 +70,6 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <Carrousel />
       <Box title={"ACTUALIDAD"} />
       <div className="wrapper">
@@ -96,7 +93,6 @@ function Home() {
           <Opinion />
         </div>
       </div>
-      <Footer />
       <hr />
     </div>
   );

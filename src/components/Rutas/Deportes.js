@@ -4,8 +4,6 @@ import imagen from "../../components/Imagenes/deportes.png";
 import { Col } from "../Col/index";
 import { Row } from "../Row/index";
 import Card from "../Card/index";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 
 const Articles = [
   {
@@ -61,12 +59,10 @@ const Articles = [
 const Deportes = () => {
   const articles = Articles;
   return (
-    <>
-      <Header />
-      <div className="imagen_title">
-        <img src={imagen} className="png"></img>
+    <div className="deportes">
+      <div className="image_title">
+        <img src={imagen} alt="Deportes" className="png"></img>
       </div>
-      <br />
       <hr />
       <div className="wrapper2">
         <Row>
@@ -82,8 +78,7 @@ const Deportes = () => {
           ))}
         </Row>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 

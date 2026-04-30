@@ -6,7 +6,7 @@ const News = ({ category, title, image, author, text }) => {
     <div className="news">
       <div>
         {image && (
-          <div className="image" style={{ backgroundImage: `url(${image})` }} />
+          <div className="image-news" style={{ backgroundImage: `url(${image})` }} />
         )}
         <h3 className={`font-primary-bold`}>
           <span className="category">{category}</span>.&nbsp;

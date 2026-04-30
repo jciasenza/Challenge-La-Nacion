@@ -1,10 +1,14 @@
 import React from "react";
-import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsInstagram, BsWhatsapp, BsGithub, BsLinkedin } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+
+const whatsapp = "+5491158094982";
 
 export const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="row">
+        <hr />
         <h3 link="/" className="col-desksm-4 --center logo">
           LA NACION
         </h3>
@@ -79,6 +83,57 @@ export const Footer = () => {
           Copyright 2022 SA LA NACION | Todos los derechos reservados
         </p>
       </div>
+
+      <div className="container">
+        <div className="row">
+            <p className="copyright-text">
+              Design | Iasenza Juan Carlos
+            </p>
+            <ul className="social-icons">
+
+              <li>
+                <a
+                  className="facebook"
+                  href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsWhatsapp />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="twitter"
+                  href="mailto:iasenzajuancarlos@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MdEmail />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dribbble"
+                  href="https://github.com/jciasenza"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsGithub />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="linkedin"
+                  href="https://www.linkedin.com/in/juan-carlos-iasenza-8119501a9/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsLinkedin />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
     </footer>
   );
 };

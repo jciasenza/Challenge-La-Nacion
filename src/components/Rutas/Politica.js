@@ -2,8 +2,6 @@ import React from "react";
 import "../../App.scss";
 import Box from "../Box";
 import { Col } from "../Col/index";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import { Row } from "../Row";
 import Card from "../Card";
 
@@ -68,7 +66,6 @@ const Politica = () => {
 
   return (
     <div>
-      <Header />
       <Box title={"Politica"} />
       <div className="wrapper3">
         <Row>
@@ -84,8 +81,6 @@ const Politica = () => {
           ))}
         </Row>
       </div>
-      <Footer />
-      <hr />
     </div>
   );
 };

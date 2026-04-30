@@ -1,16 +1,13 @@
 import React from "react";
 import "../../App.scss";
 import Box from "../Box";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import Advertising from "../Advertising";
 
 const Espectaculos = () => {
   return (
     <>
-      <Header />
       <Box title={"Espectaculos"} />
-      <main>
+      <div className="espectaculos-container">
         <section>
           <Advertising
             category={"Tragame Tierra"}
@@ -83,10 +80,7 @@ const Espectaculos = () => {
             author={"Javier Polaski"}
           />
         </section>
-      </main>
-      <hr />
-
-      <Footer />
+      </div>
     </>
   );
 };

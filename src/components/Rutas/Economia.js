@@ -1,17 +1,14 @@
 import React from "react";
 import "../../App.scss";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import BigNews from "../BigNews";
 import News from "../News";
 import imagen from "../../components/Imagenes/economia.png";
 
 const Economia = () => {
   return (
-    <>
-      <Header />
+    <div className="content_economia">
       <div className="imagen_title">
-        <img src={imagen} className="png"></img>
+        <img src={imagen} alt="Economia" className="png"></img>
       </div>
       <hr />
       <div className="content_economia">
@@ -32,10 +29,7 @@ const Economia = () => {
           }
         />
       </div>
-      <hr />
-
-      <Footer />
-    </>
+    </div>
   );
 };
 

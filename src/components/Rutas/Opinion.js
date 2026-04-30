@@ -2,8 +2,6 @@ import React from "react";
 import "../../App.scss";
 import Box from "../Box";
 import ColOpiniones from "../ColOpiniones/index";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 
 const Articles = [
   {
@@ -52,12 +50,10 @@ const Articles = [
 const Opinion = () => {
   const articles = Articles;
   return (
-    <>
-      <Header />
+    <div className="content_opinion">
       <Box title={"OPINIONES"} />
-
       {articles.map((article) => (
-        <div>
+        <div className="opiniones">
           <ColOpiniones
             category={article.category}
             title={article.title}
@@ -66,9 +62,7 @@ const Opinion = () => {
           />
         </div>
       ))}
-
-      <Footer />
-    </>
+    </div>
   );
 };
 

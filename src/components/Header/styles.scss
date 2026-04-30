@@ -1,19 +1,23 @@
 @import "../../scss/base/variables";
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: 16px 10px;
+  padding: 16px 0;
   width: 100%;
-  height: 72px;
-  left: 0px;
-  top: 0px;
-  background: rgba(255, 255, 255, 0.8);
+  height: 73px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   order: 0;
   align-self: stretch;
-  margin: 0px 0px;
-  border: 1px solid rgb(167, 166, 166);
+  margin: 0px;
+  border-bottom: 1px solid rgb(167, 166, 166);
   font-family: "Arial";
   justify-content: space-evenly;
 }
@@ -45,11 +49,13 @@
   outline: none;
   border: 1px solid #ccc;
 }
+
 .btn_subsc:hover {
   color: #e4e3e3;
   background-color: rgb(46, 46, 46);
   cursor: pointer;
 }
+
 //BOTONES SECCIONES Y BUSCAR //
 .btn_secciones {
   border-color: #f2f2f2;
@@ -66,9 +72,11 @@
   border: 1px solid transparent;
   text-transform: uppercase;
 }
+
 .btn_secciones:hover {
   color: $color;
 }
+
 .btn_buscar {
   border-color: #f2f2f2;
   color: #272727;
@@ -84,8 +92,57 @@
   border: 1px solid transparent;
   text-transform: uppercase;
 }
+
 .btn_buscar:hover {
   color: $color;
+}
+
+.search-panel {
+  position: absolute;
+  top: 73px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 16px;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  width: min(100%, 800px);
+  gap: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-input:focus {
+  border-color: $color;
+  box-shadow: 0 0 0 3px rgba(0, 96, 255, 0.12);
+}
+
+.search-close {
+  border: none;
+  background: #272727;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: .75rem;
+}
+
+.search-close:hover {
+  background: #1a1a1a;
 }
 
 // BOTON INGRESAR //
@@ -105,27 +162,31 @@
   border: 1px solid #0250c9;
   text-transform: uppercase;
 }
+
 .btn_ingresar:hover {
   color: #e4e3e3;
   background-color: $color;
   cursor: pointer;
 }
+
 //SUB MENU //
 
 .sub_menu {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1px;
+  background: #f2f2f2;
+  ;
   margin: 0;
   text-align: center;
   border: 0;
   font: inherit;
   font-size: 100%;
   box-sizing: border-box;
-  border: 1px solid rgb(192, 192, 192);
+  width: 100%;
 }
+
 .sub_menu ul {
   display: inline-flex;
   list-style: none;
+  margin: .5rem;
 }
 
 .sub_menu ul li {
@@ -134,9 +195,11 @@
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
 .menu {
   font-size: 20px;
 }
+
 .lupa {
   font-size: 20px;
 }
@@ -147,6 +210,7 @@
     background-color: transparent;
     border: none;
   }
+
   .btn_ingresar {
     visibility: hidden;
   }
@@ -154,16 +218,24 @@
   .btn_secciones {
     visibility: hidden;
   }
+
   .menu {
     visibility: visible;
   }
+
   .btn_buscar {
     visibility: hidden;
   }
+
   .lupa {
     visibility: visible;
   }
-  .sub_menu li a {
+
+  .sub_menu {
+    visibility: hidden;
+  }
+
+  .btn_subsc {
     visibility: hidden;
   }
 }
@@ -177,7 +249,7 @@
   z-index: 4;
   top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(248, 248, 248);
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
@@ -239,17 +311,41 @@
   text-transform: uppercase;
 }
 
-.openbtn:hover {
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 0;
+}
+
+.closebtn:hover {
   color: $color;
 }
 
-//
+.link-button {
+  background: none;
+  border: none;
+  color: #737373;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
 
-@media (min-width: 769px) {
+.link-button:hover {
+  color: #3366cc;
+  text-decoration: underline;
+}
   .wrap-dropdown .com-dropdown {
     width: 280px;
     max-height: 100vh;
     background: #fff;
     border: none;
   }
-}

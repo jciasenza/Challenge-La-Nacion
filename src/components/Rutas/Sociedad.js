@@ -2,8 +2,6 @@ import React from "react";
 import "../../App.scss";
 import Box from "../Box";
 import { Col } from "../Col/index";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import { Row } from "../Row";
 import Card from "../Card";
 
@@ -69,7 +67,6 @@ const Sociedad = () => {
 
   return (
     <div>
-      <Header />
       <Box title={"Sociedad"} />
       <div className="wrapper2">
         <Row>
@@ -85,8 +82,6 @@ const Sociedad = () => {
           ))}
         </Row>
       </div>
-      <Footer />
-      <hr />
     </div>
   );
 };
