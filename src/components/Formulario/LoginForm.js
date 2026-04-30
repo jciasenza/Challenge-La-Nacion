@@ -28,7 +28,7 @@ const validationsForm = (form) => {
 };
 
 const LoginForm = () => {
-  const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(
+  const { form, errors, handleChange, handleBlur } = useForm(
     initialForm,
     validationsForm
   );
